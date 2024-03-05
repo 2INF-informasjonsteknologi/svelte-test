@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #f5f5f5;
+    height : 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.oven {
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.back {
+    width: 89%;
+    background: #a4c4da;
+    height: 6vw;
+    border-top-right-radius: 2.5vw;
+    border-top-left-radius: 2.5vw;
+}
+
+.top_holder {
+    width: 100%;
+    height: 10vw;
+    perspective: 60vw;
+    margin-top: -5vw;
+    overflow: hidden;
+}
+
+.top {
+    width: 100%;
+    background: #8097a7;
+    height: 20vw;
+    transform: rotateX(50deg);
+}
+
+.front {
+    width: 100%;
+    background: #a4c4da;
+    height: 35vw;
+    border-radius: 1vw;
+    margin-top: -1vw;
+    z-index: 4;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    display: flex;
+    padding: 2vw;
+
+    .knob_row {
+        width: 93%;
+        height: 4vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .three_knob_holder {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .timer {
+            width: 6vw;
+            height: 68%;
+            border: .1vw solid #8e8d8d;
+            background: #a5a5a5b8;
+            border-radius: .3vw;
+            text-align: center;
+            font-size: 1vw;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+            padding: .3vw;
+            letter-spacing: .1vw;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: .5vw;
+                height: .5vw;
+                top: .3vw;
+                right: 44%;
+                background: red;
+                border-radius: 50%;
+                animation: timer 1s linear 1s 11 normal forwards;
+
+            }
+        }
+
+        .circle_knob {
+            display: inline-block;
+            width: 3vw;
+            height: 3vw;
+            background: #e8e8e8;
+            border-radius: 100%;
+            border : .2vw solid #656565;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1vw;
+
+            .center {
+                display: inline-block;
+                width: 2vw;
+                height: 2vw;
+                border : .1vw solid #656565;
+                border-radius: 100%;
+                box-shadow : inset 0px 0px 2px 1px gainsboro;
+            }
+        }
+    }
+
+    .door {
+        width: 100%;
+        background: #96bad4;
+        height: 25vw;
+        border-radius: 2vw;
+        padding : 2vw;
+
+        .glass {
+            width: 100%;
+            background: #00000094;
+            height: 18vw;
+            border-radius: 2vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: .2vw solid #656565;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 1vw;
+                height: 100%;
+                background: #ffffff4d;
+                right: 9%;
+                transform: skewX(323deg);
+                z-index: 5;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 3vw;
+                height: 100%;
+                background: #ffffff4d;
+                right: 18%;
+                transform: skewX(323deg);
+                z-index: 5;
+            }
+        }
+
+        .knob {
+            margin : 0 auto 2vw auto;
+            width: 90%;
+            height: 1vw;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .center {
+                width: 94%;
+                height: 1vw;
+                background: #e8e8e8;
+                border-radius: 1vw;
+                position: absolute;
+                right: 3%;
+                z-index: 4;
+                border: .2vw solid #656565;
+            }
+
+            .right {
+                width: 9%;
+                height: 1.5vw;
+                background: #656565;
+                z-index: 2;
+                border-radius: 1vw;
+                border-top-right-radius: 3vw;
+                border-bottom-right-radius: 3vw;
+            }
+            .left {
+                width: 9%;
+                height: 1.5vw;
+                background: #656565;
+                z-index: 2;
+                border-radius: 2vw;
+                border-top-left-radius: 3vw;
+                border-bottom-left-radius: 3vw;
+            }
+        }
+
+    }
+}
+
+
+.legs_holder {
+    width: 100%;
+    position: relative;
+    height: 2vw;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        right: 10%;
+        background: #757272;
+        width: 5vw;
+        height: 1vw;
+        display: inline-block;
+        border-bottom-right-radius: 1vw;
+        border-bottom-left-radius: 1vw;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        left: 10%;
+        background: #757272;
+        width: 5vw;
+        height: 1vw;
+        display: inline-block;
+        border-bottom-right-radius: 1vw;
+        border-bottom-left-radius: 1vw;
+    }
+}
